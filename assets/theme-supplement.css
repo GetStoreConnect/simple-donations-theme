@@ -1634,10 +1634,13 @@ img {
 }
 
 .sc-testimonial-slideshow {
-  padding: var(--sc-spacing-xlarge) 0;
   margin: 0;
   background-color: hsla(var(--sc-color-primary-h), var(--sc-color-primary-s), 98%, 1);
   border-radius: var(--sc-border-radius);
+}
+
+.sc-testimonial-slideshow .tns-ovh.tns-ah {
+  height: auto !important;
 }
 
 .sc-testimonial-slideshow .tns-horizontal.tns-subpixel > .tns-item {
@@ -1660,5 +1663,5 @@ img {
 }
 
 .sc-testimonial-slideshow .tns-nav {
-  bottom: -25px;
+  bottom: 15px;
 }

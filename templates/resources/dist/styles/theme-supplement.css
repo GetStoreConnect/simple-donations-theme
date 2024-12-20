@@ -1679,4 +1679,37 @@ img {
   outline-color: var(--sc-color-primary);
 }
 
+.sc-testimonial-slideshow {
+  margin: 0;
+  background-color: hsla(var(--sc-color-primary-h), var(--sc-color-primary-s), 98%, 1);
+  border-radius: var(--sc-border-radius);
+}
+
+.sc-testimonial-slideshow .tns-ovh.tns-ah {
+  height: auto !important;
+}
+
+.sc-testimonial-slideshow .tns-horizontal.tns-subpixel > .tns-item {
+  vertical-align: top;
+}
+
+.sc-testimonial-slideshow .sc-imageBesideText {
+  display: flex;
+  justify-content: center;
+}
+
+.sc-testimonial-slideshow .sc-imageBesideText .sc-imageBesideText_image {
+  border-radius: 50%;
+  width: 200px;
+}
+
+.sc-testimonial-slideshow .tns-controls button[data-controls=prev],
+.sc-testimonial-slideshow .tns-controls button[data-controls=next] {
+  top: 45%;
+}
+
+.sc-testimonial-slideshow .tns-nav {
+  bottom: 15px;
+}
+
 /*# sourceMappingURL=styles.css.map */

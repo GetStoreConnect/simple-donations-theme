@@ -3,7 +3,7 @@
   id="{% if content_block.identifier != blank %}SC-ContentBlock-{{ content_block.identifier }}{% endif %}"
   data-cb="{{ content_block.identifier }}">
 
-  {%- if content_block.products.size > 5 %}
+  {%- if content_block.products.size > 4 %}
     <div class="sc-card-carousel">
       <div class="sc-card-carousel_header sc-ps-small sc-md:ps-base sc-lg:ps-large">
         {%- unless content_block.title == blank %}

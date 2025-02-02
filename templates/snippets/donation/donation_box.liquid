@@ -2,8 +2,6 @@
 {% default id: blank %}
 {% default styles: blank %}
 
-{%- render "scripts/tabs.js" %}
-
 <div class="sc-banner_box{% if styles != blank %} {{ styles }}{% endif %}" data-size="{{ product.variants.size }}">
   <div class="sc-banner_box_container sc-p-base">
     <h3 class="sc-font-xlarge">{{ "donation.box.title" |t }}</h3>

@@ -1,16 +1,4 @@
 :root {
-  --sc-color-primary-h: 168;
-  --sc-color-primary-s: 100.0%;
-  --sc-color-primary-l: 30%;
-  --sc-color-primary: hsla(var(--sc-color-primary-h),
-                          var(--sc-color-primary-s),
-                          var(--sc-color-primary-l), 1);
-  --sc-color-secondary-h: 0;
-  --sc-color-secondary-s: 0.0%;
-  --sc-color-secondary-l: 13.3%;
-  --sc-color-secondary: hsla(var(--sc-color-secondary-h),
-                           var(--sc-color-secondary-s),
-                           var(--sc-color-secondary-l), 1);
   --sc-color-sale: hsl(2, 91%, 61%);
   --sc-color-sale-h: 2;
   --sc-color-sale-s: 91%;

@@ -2,6 +2,7 @@
      assign page_template = current_product.data["Product_Page_Template__c"] | default: blank
      assign total_donations = current_product.data['Funded_Amount__c'] | default: 0
      assign donation_target = current_product.data['Funding_Goal__c'] | default: 0
+     default show_progress = false
 
     if current_product.variant?
       assign page_template = current_product.master.data["Product_Page_Template__c"] | default: blank
@@ -27,7 +28,9 @@
         {%- if is_bundle %}
           <div data-bundle-anchor-variants></div>
         {%- else %}
-          {%- render "products/product/progression_bar", total_donations: total_donations, donation_target: donation_target %}
+          {%- if show_progress %}
+            {%- render "products/product/progression_bar", total_donations: total_donations, donation_target: donation_target %}
+          {%- endif %}
 
           <div class="SC-ProductContentBlocks" id="SC-ProductContentBlocks">
             {%# Features %}
@@ -78,49 +81,7 @@
         {%- endif %}
 
         {% render "products/product/json-ld", product: current_product %}
-
-        {%# To do %}
-        {% comment %}
-        <style>
-          .tns-controls { display: none; }
-          .tns-outer [data-action] {display: none; }
-        </style>
-        {% endcomment %}
-
-        {%# To do %}
-        {% comment %}
-        {% if current_product.data.fundraising_donations_json__c %}
-          {% new List messages = current_product.data.fundraising_donations_json__c | unescape %}
-          {% if messages.size > 0 %}
-            <div class="sc-container">
-              <style>
-                .sc-name {
-                  font-weight: 600;
-                }
-                .sc-message {
-                  font-size: 24px;
-                  font-style: italic;
-                }
-              </style>
-              <div class="sc-cards sc-p-base" data-featured-slider="two">
-                {% for message in messages %}
-                  <div>
-                    <div class="sc-shadow sc-p-base sc-border-radius">
-                      <div class="sc-flex-col sc-gap-tiny" style="line-height: 1.5;">
-                        <div class="sc-name">{{ message.Donator_Name__c | default: 'Anonymous' }}</div>
-                        <div class="sc-message">{{ message.Donation_Message__c | default: '-' }}</div>
-                        <div class="sc-amount">{{ message.TotalPrice }}</div>
-                      </div>
-                    </div>
-                  </div>
-                {% endfor %}
-              </div>
-            </div>
-          {% endif %}
-        {% endif %}
-        {% endcomment %}
-
-        {%# To do %}
+        
         {%# Related products %}
         {%- if current_product.related_products.size > 0 %}
           <section class="sc-container">
@@ -131,12 +92,3 @@
     </div>
   </div>
 {%- endcache %}
-
-{%- render "shared/scripts/slider.js" %}
-
-{%# To do %}
-{%- if current_product.variants.size > 0 %}
-  {%- require "scripts/product-donation-picker.js" %}
-{%- else %}
-  {%- require "scripts/donation-picker.js" %}
-{%- endif %}

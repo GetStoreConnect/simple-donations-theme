@@ -1,34 +1,7 @@
-{% if current_request.path == "/nfp/start-fundraiser" %}
-  <style>
-  .SC-Field {
-      max-width: 100%;
-    }
+{%# Use when you need to scope CSS on specific pages or templates %}
 
-    .sc-content-block-container {
-      padding-top: 0;
-    }
-    
-    @media screen and (min-width: 992px) {
-    .sc-content-block-container_body:not(.sc-expand) {
-      gap: var(--sc-spacing-xlarge);
-      max-width: 1250px;
-    }
-  }
-  #sc-component-nfp-accordion-start-fundraising .sc-accordion_header_heading h3::before {
-    content: "💁‍♂️";
-    margin-right:  var(--sc-spacing-small)
-  }
-  #sc-component-nfp-accordion-your-fundraiser .sc-accordion_header_heading h3::before {
-    content: "❤️";
-    margin-right:  var(--sc-spacing-small)
-  }
-  #sc-component-nfp-accordion-fundraiser-details .sc-accordion_header_heading h3::before {
-    content: "⚙️";
-    margin-right:  var(--sc-spacing-small)
-  }
-  #sc-component-nfp-accordion-fundraiser-summary .sc-accordion_header_heading h3::before {
-    content: "📊";
-    margin-right:  var(--sc-spacing-small)
-  }
+{% if current_request.path == "/" %}
+  <style>
+
   </style>
 {% endif %}

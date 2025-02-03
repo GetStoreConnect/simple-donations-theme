@@ -3,7 +3,6 @@
 
 {% if product %}
   {% if product.variant_types.size > 0 %}
-    {%- require "scripts/product-variants.js" -%}
 
     {% render "products/product/variant.json", product: product %}
     {%- if product.variant? and product.variant_choices.size > 0 %}

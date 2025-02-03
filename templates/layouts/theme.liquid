@@ -8,6 +8,8 @@
 {%- default sc_javascript: blank -%}
 {%- default sc_stylesheet: blank -%}
 {%- default sc_support: blank -%}
+{%- default theme_javascript: blank -%}
+{%- default theme_stylesheet: blank -%}
 {%- default theme_supplement_javascript: blank -%}
 {%- default theme_supplement_stylesheet: blank -%}
 {%- default title: blank -%}
@@ -24,34 +26,31 @@
     {%- render "meta_data", title: title, meta_keywords: meta_keywords, meta_description: meta_description %}
 
     {%- comment -%} Styles {%- endcomment -%}
-    {% require "styles/theme.css" %}
+    {{ sc_stylesheet }}
+    {{ theme_stylesheet }}
     {{ theme_supplement_stylesheet }}
     {% if current_store.global_css != blank %}<style>{{ current_store.global_css }}</style>{% endif %}
     {%- render "styles" %}
+    {%- render "shared/conditional_css" %}
+    {%- render "shared/fonts" %}
+    <link rel="stylesheet" rel="{{ 'tiny-slider.min.css' | asset_url }}">
 
     {%- comment -%} Scripts {%- endcomment -%}
-    {% require "scripts/configure.js" %}
-    {% require "scripts/theme.js" %}
+    {{ sc_javascript }}
+    {{ theme_javascript }}
     {{ theme_supplement_javascript }}
     {% if current_store.global_javascript != blank %}<script>{{ current_store.global_javascript }}</script>{% endif %}
     {%- render "scripts" %}
     {{ sc_support }}
     <script src="{{ 'lazy.js' | asset_url }}" defer></script>
+    <script src="{{ 'tiny-slider.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'donation-picker.js' | asset_url }}" defer></script>
 
-    {% comment %}Dev CSS {% endcomment %}
-    <style>
-      {%- render "shared/css" %}
-    </style>
-    {%- render "shared/conditional_css" %}
-    {%- render "shared/fonts" %}
     {%- render "store/head" %}
     {%- render "events" %}
   </head>
 
   <body id="{{ id }}" data-sc-controller="{{ controller }}" data-sc-action="{{ action }}" {{ data }}>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v21.0"></script>
-
     {{ theme_bar }}
     {%- if controller == "salesforce_payments" %}
       {%- render "salesforce_payments", content: body_content %}

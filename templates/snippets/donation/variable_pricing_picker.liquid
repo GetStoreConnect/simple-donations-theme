@@ -12,6 +12,8 @@
       endif
 %}
 
+{%- require "scripts/donation-picker.js" %}
+
 {%- if pricing != blank %}
   {%- assign show_picker = true %}
   {%- if pricing.variable_pricing? and pricing.variable_pricing_amounts.size > 0 %}

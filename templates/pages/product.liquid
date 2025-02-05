@@ -92,3 +92,12 @@
     </div>
   </div>
 {%- endcache %}
+
+{%- render "shared/scripts/slider.js" %}
+
+{%# To do %}
+{%- if current_product.variants.size > 0 %}
+  {%- require "scripts/product-donation-picker.js" %}
+{%- else %}
+  {%- require "scripts/donation-picker.js" %}
+{%- endif %}

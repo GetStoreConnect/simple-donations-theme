@@ -1,5 +1,7 @@
 # Simple Donation Theme 
 
+**Version: StoreConnect v20**
+
 The Simple Donation theme is specifically designed for nonprofit organizations looking to deliver an optimized user experience, perfect for quickly capturing donations or selling their products efficiently. With this theme, you can amplify your mission's impact by streamlining contributions and purchases.
 
 <img width="1278" alt="nfp-theme-main-image" src="https://github.com/user-attachments/assets/c9a0625c-cdb6-4e7a-a156-c15314e0ecca">
@@ -76,10 +78,11 @@ Before getting started, note that some templates will require additional configu
 - `accordion`
 - `donation_card`
 - `donation_progress_bar`
+- `testimonial_slider`
 
-For guidance, refer to our [Help Article: How to Add Templates to the Template Picklist](https://help.getstoreconnect.com/documentation/adding-templates-to-content-template-picklist.html).
+For guidance, refer to our [Help Article: How to Add Templates to the Template Picklist](https://support.getstoreconnect.com/article/adding-templates-to-content-template-picklist).
 
-Each template supports specific fields and options when setting up your content blocks. Below, you'll find a list of supported fields. Keep in mind that you can continue using the rest of the out-of-the-box templates to build your site. Consult the [content block templates](https://help.getstoreconnect.com/documentation/content-block-templates.html) help article for a complete overview of the supported fields for each template.
+Each template supports specific fields and options when setting up your content blocks. Below, you'll find a list of supported fields. Keep in mind that you can continue using the rest of the out-of-the-box templates to build your site. Consult the [content block templates](https://support.getstoreconnect.com/article/content-block-templates) help article for a complete overview of the supported fields for each template.
 
 ---
 

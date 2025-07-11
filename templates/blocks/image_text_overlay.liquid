@@ -60,3 +60,7 @@
     <div class="sc-banner_overlay"></div>
   {%- endif %}
 </div>
+
+{%- unless product == blank -%}
+  {% require "scripts/donation-picker.js" %}
+{%- endunless -%}

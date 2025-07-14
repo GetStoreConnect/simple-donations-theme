@@ -6,7 +6,7 @@
   <div class="SC-ProductCard_image_wrapper">
     <a class="SC-ProductCard_image" href="{{ product.path }}">
       {%- if product.image != blank %}
-        <img loading="lazy" src="{{ product.image.medium_url }}"/>
+        <img loading="lazy" src="{{ product.image.pico_url }}" data-src="{{ product.image.medium_url }}" />
       {%- else %}
         {% render "shared/placeholder_image" %}
       {%- endif %}

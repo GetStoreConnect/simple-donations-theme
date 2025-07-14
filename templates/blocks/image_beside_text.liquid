@@ -8,7 +8,8 @@
   {%- if content_block.image != blank %}
     <img
       class="sc-imageBesideText_image"
-      src="{{ content_block.image.medium_url }}"
+      src="{{ content_block.image.small_url }}"
+      data-src="{{ content_block.image.massive_url }}"
       alt="{{ content_block.image.alt_text | escape }}"
       loading="lazy">
   {%- else %}

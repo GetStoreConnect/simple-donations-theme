@@ -5,11 +5,9 @@
   {%- endfor %}
 {%- endcapture %}
 
-<section class="SC-Slideshow" data-cb="{{ content_block.identifier }}">
+<section class="sc-testimonial-slideshow" data-cb="{{ content_block.identifier }}">
   {%- if children_content != blank %}
-    {%- require "scripts/slider.js" -%}
-
-    <div class="SC-Slider" data-slideshow="{{ content_block.identifier }}">
+    <div class="sc-testimonial-slideshow__body sc-pe-large" data-slideshow="{{ content_block.identifier }}">
       {{ children_content }}
     </div>
   {%- else %}

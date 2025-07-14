@@ -1,5 +1,7 @@
 # Simple Donation Theme 
 
+**Version: StoreConnect v19**
+
 The Simple Donation theme is specifically designed for nonprofit organizations looking to deliver an optimized user experience, perfect for quickly capturing donations or selling their products efficiently. With this theme, you can amplify your mission's impact by streamlining contributions and purchases.
 
 <img width="1278" alt="nfp-theme-main-image" src="https://github.com/user-attachments/assets/c9a0625c-cdb6-4e7a-a156-c15314e0ecca">

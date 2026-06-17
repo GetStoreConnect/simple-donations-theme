@@ -1,4 +1,4 @@
-{%-  liquid 
+{%-  liquid
      assign page_template = current_product.data["Product_Page_Template__c"] | default: blank
      assign total_donations = current_product.data['Funded_Amount__c'] | default: 0
      assign donation_target = current_product.data['Funding_Goal__c'] | default: 0
@@ -12,11 +12,12 @@
 {%- cache "product", items: [current_product, current_store, current_customer, current_cart] %}
   <div data-remote-target="product" class="sc-pos-relative">
     {%- render "shared/loader" %}
+    {%- assign is_cpq_bundle = current_product.bundle_lead? %}
     {%- assign is_bundle = current_product.bundle_lead? | default: false %}
 
     <div>
       <div id="SC-product-{{ current_product.slug }}">
-        {%- liquid 
+        {%- liquid
             case page_template
               when blank
                 render "products/views/product_display_compact", product: current_product, is_bundle: is_bundle
@@ -26,7 +27,13 @@
         %}
 
         {%- if is_bundle %}
-          <div data-bundle-anchor-variants></div>
+          {%- if is_cpq_bundle %}
+            <div data-bundle-anchor-variants></div>
+          {%- else %}
+            <div data-bundle-anchor-variants>
+              {% render "products/product/bundle/anchor_variants", product: current_product %}
+            </div>
+          {%- endif %}
         {%- else %}
           {%- if show_progress %}
             {%- render "products/product/progression_bar", total_donations: total_donations, donation_target: donation_target %}
@@ -76,12 +83,12 @@
                 </div>
               </section>
             {%- endif %}
-            
+
           </div>
         {%- endif %}
 
         {% render "products/product/json-ld", product: current_product %}
-        
+
         {%# Related products %}
         {%- if current_product.related_products.size > 0 %}
           <section class="sc-container">

@@ -3,7 +3,7 @@
     {{ current_store.header.render }}
   {%- else %}
     {% render "scripts/menu.js" %}
-    
+
     {%- capture store_logo %}
     <a href="{{ current_store.home_path }}" class="SC-Logo">
       {%- if current_store.logo != blank %}
@@ -15,7 +15,7 @@
       {%- endif %}
     </a>
     {%- endcapture %}
-    
+
     <header class="sc-header" id="sc-header">
       {%- render "header/geolocation" %}
       <div class="sc-header_top">
@@ -25,7 +25,7 @@
               <a href="{{ theme_variables['top.header.cta.target'] }}" class="sc-menu_link">{{ "top.header.cta_label" | t }}</a>
             </li>
             {%- render "header/dropdown/account" %}
-            {%- render "header/dropdown/cart" %}
+            {%- component "cart-menu", reload: "sc.cart-updated sc.voucher-applied sc.voucher-removed" %}
           </ul>
         </div>
       </div>

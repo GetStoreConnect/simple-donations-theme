@@ -1,6 +1,6 @@
-# Simple Donation Theme 
+# Simple Donation Theme
 
-**Version: StoreConnect v20**
+**Version: StoreConnect v21**
 
 The Simple Donation theme is specifically designed for nonprofit organizations looking to deliver an optimized user experience, perfect for quickly capturing donations or selling their products efficiently. With this theme, you can amplify your mission's impact by streamlining contributions and purchases.
 
@@ -69,7 +69,7 @@ Organize and display custom content with an interactive accordion. Perfect for:
 Highlight key campaigns with a featured donations carousel. Showcase outstanding donations to promote them and provide quick access to their respective pages.
 
 > *Note: The progress bar selector and page templates picklist may require minor additional configuration for your organization—no advanced setup needed.*
-> 
+>
 
 ## How to Start Building Your Content with the Simple Donation Theme
 
@@ -134,7 +134,7 @@ Each template supports specific fields and options when setting up your content 
 ### Donation Progress Bar
 
 > Note: Setting up the progress bar requires additional configuration for your organization. We provide support documentation and guidance only.
-> 
+>
 
 To create a global donation bar, configure two global custom fields at the store level:
 

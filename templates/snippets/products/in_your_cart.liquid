@@ -15,7 +15,8 @@
         {%- if item.in_bundle? and item.bundle_lead? == false %}
           {%- continue %}
         {%- endif %}
-        {%- render "shared/line_items/item", line_item: item, compact: compact, extended: extended, hide_image: hide_image %}
+        {%- comment %} Pass in `line_item` for backwards compatibility. No summary here, so the line states what it charges {% endcomment %}
+        {%- render "shared/cart_items/item", cart_item: item, line_item: item, compact: compact, extended: extended, hide_image: hide_image, before_promotions: false %}
       {%- endfor %}
     </div>
   </div>

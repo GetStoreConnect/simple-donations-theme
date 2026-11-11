@@ -77,7 +77,7 @@
       <div class="SC-Field_error" data-error-for="price"></div>
     </div>
   {% endform %}
-  {%- if product.pricing.can_purchase_with_currency? and theme_variables["products.card.hide_purchase_button"] == false %}
+  {%- if product.pricing.can_purchase_with_currency? and product.can_purchase? and theme_variables["products.card.hide_purchase_button"] == false %}
     {% render "products/product/express_checkout", product: product, wallet_disabled: button_disabled %}
   {%- endif %}
 {%- else %}

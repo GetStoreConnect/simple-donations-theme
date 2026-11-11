@@ -49,7 +49,7 @@
 
   <div class="SC-ProductCard_content sc-flex-col sc-gap-medium sc-ps-medium sc-pb-medium">
     {%- comment %} Headline {% endcomment %}
-    <a class="SC-ProductCard_headline" href="{{ product.path }}">{{ product.name | truncate: 70 }}</a>
+    <a class="SC-ProductCard_headline" href="{{ product.path }}">{{ product.name | unescape | truncate: 70 | escape_once }}</a>
 
     {%- comment %} Detail {% endcomment %}
     <div class="SC-ProductCard_subheadline">
